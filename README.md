@@ -1,7 +1,7 @@
 # 🎄 Advent of Code 👨‍💻
-My solutions to Advent of Code 2017 http://adventofcode.com/2017
+My solutions to [Advent of Code 2017](http://adventofcode.com/2017)
 
-## Day 1
+## [Day 1](http://adventofcode.com/2017/day/1)
 
 ### Challenge 1
 > Find the sum of all digits that match the next digit in the list. The list is circular, so the digit after the last digit is the first digit in the list.
@@ -47,7 +47,7 @@ func captcha(for input: String) -> Int {
 }
 ```
 
-## Day 2
+## [Day 2](http://adventofcode.com/2017/day/2)
 
 ## Challenge 3
 > For each row, determine the difference between the largest value and the smallest value; the checksum is the sum of all of these differences.
