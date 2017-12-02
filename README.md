@@ -6,6 +6,14 @@ My solutions to [Advent of Code 2017](http://adventofcode.com/2017)
 ### Challenge 1
 > Find the sum of all digits that match the next digit in the list. The list is circular, so the digit after the last digit is the first digit in the list.
 
+```
+Example Input:
+91212129
+
+Excpected Output:
+9
+```
+
 ```swift
 func captcha(for input: String) -> Int {
     var sum = 0
@@ -26,6 +34,14 @@ func captcha(for input: String) -> Int {
 
 ### Challenge 2
 > Now, instead of considering the next digit, it wants you to consider the digit halfway around the circular list. That is, if your list contains 10 items, only include a digit in your sum if the digit 10/2 = 5 steps forward matches it. Fortunately, your list has an even number of elements.
+
+```
+Example Input:
+12131415
+
+Excpected Output:
+4
+```
 
 ```swift
 func captcha(for input: String) -> Int {
@@ -52,6 +68,16 @@ func captcha(for input: String) -> Int {
 ## Challenge 3
 > For each row, determine the difference between the largest value and the smallest value; the checksum is the sum of all of these differences.
 
+```
+Example Input:
+5 1 9 5
+7 5 3
+2 4 6 8
+
+Excpected Output:
+18
+```
+
 ```swift
 func checksum(for input: String) -> Int {
     let intRows = input
@@ -70,6 +96,16 @@ func checksum(for input: String) -> Int {
 
 ## Challenge 4
 > Find the only two numbers in each row where one evenly divides the other - that is, where the result of the division operation is a whole number. They would like you to find those numbers on each line, divide them, and add up each line's result.
+
+```
+Example Input:
+5 9 2 8
+9 4 7 3
+3 8 6 5
+
+Excpected Output:
+9
+```
 
 ```swift
 func checksum(for input: String) -> Int {
