@@ -11,12 +11,12 @@ func captcha(for input: String) -> Int {
     var sum = 0
     let digits = Array(input).flatMap { Int(String($0)) }
     for (index, digit) in digits.enumerated() {
-        guard index + 1 < digits.endIndex else {
-            if digit == digits[0] { sum += digit }
-            break
+        var lookupIndex = index + 1
+        if lookupIndex > digits.endIndex - 1 {
+            lookupIndex = 0
         }
 
-        if digit == digits[index + 1], digits.count > 2 {
+        if digit == digits[lookupIndex] {
             sum += digit
         }
     }
