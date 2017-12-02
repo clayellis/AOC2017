@@ -61,7 +61,7 @@ func checksum(for input: String) -> Int {
 
     let checksum = intRows
         .map { ($0.max()!, $0.min()!) }
-        .map { $0.0 - $0.1 }
+        .map(-)
         .reduce(0, +)
 
     return checksum
@@ -90,7 +90,7 @@ func checksum(for input: String) -> Int {
             }
             return nil
         }
-        .map { $0.0 / $0.1 }
+        .map(/)
         .reduce(0, +)
 
     return checksum
