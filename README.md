@@ -7,7 +7,7 @@ My solutions to Advent of Code 2017 http://adventofcode.com/2017
 > Find the sum of all digits that match the next digit in the list. The list is circular, so the digit after the last digit is the first digit in the list.
 
 ```swift
-func checksum(input: String) -> Int {
+func captcha(for input: String) -> Int {
     var sum = 0
     let digits = Array(input).flatMap { Int(String($0)) }
     for (index, digit) in digits.enumerated() {
@@ -28,7 +28,7 @@ func checksum(input: String) -> Int {
 > Now, instead of considering the next digit, it wants you to consider the digit halfway around the circular list. That is, if your list contains 10 items, only include a digit in your sum if the digit 10/2 = 5 steps forward matches it. Fortunately, your list has an even number of elements.
 
 ```swift
-func checksum(input: String) -> Int {
+func captcha(for input: String) -> Int {
     var sum = 0
     let digits = Array(input).flatMap { Int(String($0)) }
     let offset = digits.count / 2
