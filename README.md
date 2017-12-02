@@ -12,7 +12,7 @@ func captcha(for input: String) -> Int {
     let digits = Array(input).flatMap { Int(String($0)) }
     for (index, digit) in digits.enumerated() {
         var lookupIndex = index + 1
-        if lookupIndex > digits.count {
+        if lookupIndex > digits.endIndex - 1 {
             lookupIndex = 0
         }
 
@@ -34,7 +34,7 @@ func captcha(for input: String) -> Int {
     let offset = digits.count / 2
     for (index, digit) in digits.enumerated() {
         var lookupIndex = index + offset
-        let distancePastEnd = lookupIndex - digits.count
+        let distancePastEnd = lookupIndex - digits.endIndex - 1
         if distancePastEnd > 0 {
             lookupIndex = distancePastEnd - 1
         }
