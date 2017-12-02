@@ -46,3 +46,53 @@ func captcha(for input: String) -> Int {
     return sum
 }
 ```
+
+## Day 2
+
+## Challenge 3
+> For each row, determine the difference between the largest value and the smallest value; the checksum is the sum of all of these differences.
+
+```swift
+func checksum(for input: String) -> Int {
+    let intRows = input
+        .components(separatedBy: .newlines)
+        .map { $0.components(separatedBy: .whitespaces) }
+        .map { $0.flatMap { Int($0) } }
+
+    let checksum = intRows
+        .map { ($0.max()!, $0.min()!) }
+        .map { $0.0 - $0.1 }
+        .reduce(0, +)
+
+    return checksum
+}
+```
+
+## Challenge 4
+> Find the only two numbers in each row where one evenly divides the other - that is, where the result of the division operation is a whole number. They would like you to find those numbers on each line, divide them, and add up each line's result.
+
+```swift
+func checksum(for input: String) -> Int {
+    let intRows = input
+        .components(separatedBy: .newlines)
+        .map { $0.components(separatedBy: .whitespaces) }
+        .map { $0.flatMap { Int($0) } }
+
+    let checksum = intRows
+        .flatMap { row -> (first: Int, second: Int)? in
+            for (outerIndex, outerDigit) in row.enumerated() {
+                for (innerIndex, innerDigit) in row.enumerated() {
+                    guard outerIndex != innerIndex else { continue }
+                    if outerDigit % innerDigit == 0 {
+                        return (outerDigit, innerDigit)
+                    }
+                }
+            }
+            return nil
+        }
+        .map { $0.0 / $0.1 }
+        .reduce(0, +)
+
+    return checksum
+}
+```
